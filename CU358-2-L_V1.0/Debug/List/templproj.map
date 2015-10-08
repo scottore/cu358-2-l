@@ -1,0 +1,776 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V1.42.1.142 for STM8                   06/Oct/2015  10:56:31 #
+# Copyright 2010-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Exe\templproj.out                          #
+#    Map file     =  E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\List\templproj.map                         #
+#    Command line =  E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\analog.o E:\Workspace\SoftwareBackup\n #
+#                    rf24l01-for-stm8s\stm8s003_ctrlbox\Debug\Obj\eeprom.o    #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\hal_delay.o                            #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\main.o E:\Workspace\SoftwareBackup\nrf #
+#                    24l01-for-stm8s\stm8s003_ctrlbox\Debug\Obj\misc.o        #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\nrf24l01.o                             #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\nrf24l01_port.o                        #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\position.o                             #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\relais.o E:\Workspace\SoftwareBackup\n #
+#                    rf24l01-for-stm8s\stm8s003_ctrlbox\Debug\Obj\relais_port #
+#                    .o E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s0 #
+#                    03_ctrlbox\Debug\Obj\rf-protocol.o                       #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\steuerung.o                            #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\stm8s_it.o                             #
+#                    E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ #
+#                    ctrlbox\Debug\Obj\sync_communication.o --redirect        #
+#                    _Printf=_PrintfFullNoMb --redirect                       #
+#                    _Scanf=_ScanfFullNoMb -o E:\Workspace\SoftwareBackup\nrf #
+#                    24l01-for-stm8s\stm8s003_ctrlbox\Debug\Exe\templproj.out #
+#                     --map E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\st #
+#                    m8s003_ctrlbox\Debug\List\templproj.map --config         #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\stm8\config\lnkstm8s003k3.icf" --config_def          #
+#                    _CSTACK_SIZE=0x100 --config_def _HEAP_SIZE=0x100         #
+#                    --entry __iar_program_start --debug_lib                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary            = DLib
+__code_model               = small
+__core                     = stm8
+__data_model               = medium
+__dlib_file_descriptor     = 0
+__dlib_full_locale_support = 0
+__rt_version               = 4
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x000000-0x0000ff] { rw section .vregs };
+"A2":  place at end of [0x000000-0x0003ff] { block CSTACK };
+"P2":  place in [from 0x000000 to 0x0003ff] {
+          block HEAP, rw section .far.bss, rw section .far.data,
+          rw section .far.noinit, rw section .far_func.textrw,
+          rw section .huge.bss, rw section .huge.data, rw section .huge.noinit,
+          rw section .huge_func.textrw, rw section .iar.dynexit,
+          rw section .near.bss, rw section .near.data, rw section .near.noinit,
+          rw section .near_func.textrw };
+"A3":  place at start of [0x008000-0x009fff] { block INTVEC };
+"P3":  place in [from 0x008000 to 0x009fff] {
+          ro section .far.data_init, ro section .far_func.textrw_init,
+          ro section .huge.data_init, ro section .huge_func.textrw_init,
+          ro section .iar.init_table, ro section .init_array,
+          ro section .near.data_init, ro section .near.rodata,
+          ro section .near_func.text, ro section .near_func.textrw_init,
+          ro section .tiny.data_init, ro section .tiny.rodata_init };
+"P7":  place in [from 0x004000 to 0x00407f] { section .eeprom.data };
+
+  Section            Kind      Address    Size  Object
+  -------            ----      -------    ----  ------
+"A1":                                     0x10
+  .vregs             uninit   0x000000    0x10  vregs.o [4]
+                            - 0x000010    0x10
+
+"P2", part 1 of 2:                        0x2e
+  P2 s0                       0x000010    0x2e  <Init block>
+    .near.data       inited   0x000010     0x7  relais.o [1]
+    .near.data       inited   0x000017     0x7  relais.o [1]
+    .near.data       inited   0x00001e     0x7  relais.o [1]
+    .near.data       inited   0x000025     0x7  relais.o [1]
+    .near.data       inited   0x00002c     0x7  relais.o [1]
+    .near.data       inited   0x000033     0x4  steuerung.o [1]
+    .near.data       inited   0x000037     0x4  rand.o [4]
+    .near.data       inited   0x00003b     0x1  rf-protocol.o [1]
+    .near.data       inited   0x00003c     0x1  sync_communication.o [1]
+    .near.data       inited   0x00003d     0x1  sync_communication.o [1]
+                            - 0x00003e    0x2e
+
+"P2", part 2 of 2:                       0x22c
+  .near.bss          zero     0x00003e    0x80  rand.o [4]
+  .near.bss          zero     0x0000be    0x3c  analog.o [1]
+  .near.bss          zero     0x0000fa    0x35  nrf24l01.o [1]
+  .near.bss          zero     0x00012f    0x2b  sync_communication.o [1]
+  .near.bss          zero     0x00015a    0x28  sync_communication.o [1]
+  .near.bss          zero     0x000182    0x20  rf-protocol.o [1]
+  .near.bss          zero     0x0001a2    0x20  rf-protocol.o [1]
+  .near.bss          zero     0x0001c2    0x10  rf-protocol.o [1]
+  .near.bss          zero     0x0001d2     0x9  nrf24l01.o [1]
+  .near.bss          zero     0x0001db     0x9  rf-protocol.o [1]
+  .near.bss          zero     0x0001e4     0x8  position.o [1]
+  .near.bss          zero     0x0001ec     0x6  analog.o [1]
+  .near.bss          zero     0x0001f2     0x4  position.o [1]
+  .near.bss          zero     0x0001f6     0x4  rf-protocol.o [1]
+  .near.bss          zero     0x0001fa     0x4  steuerung.o [1]
+  .near.bss          zero     0x0001fe     0x4  steuerung.o [1]
+  .near.bss          zero     0x000202     0x4  sync_communication.o [1]
+  .near.bss          zero     0x000206     0x4  sync_communication.o [1]
+  .near.bss          zero     0x00020a     0x4  sync_communication.o [1]
+  .near.bss          zero     0x00020e     0x4  sync_communication.o [1]
+  .near.bss          zero     0x000212     0x4  sync_communication.o [1]
+  .near.bss          zero     0x000216     0x4  sync_communication.o [1]
+  .near.bss          zero     0x00021a     0x4  sync_communication.o [1]
+  .near.bss          zero     0x00021e     0x4  rand.o [4]
+  .near.bss          zero     0x000222     0x2  eeprom.o [1]
+  .near.bss          zero     0x000224     0x2  main.o [1]
+  .near.bss          zero     0x000226     0x2  position.o [1]
+  .near.bss          zero     0x000228     0x2  position.o [1]
+  .near.bss          zero     0x00022a     0x2  position.o [1]
+  .near.bss          zero     0x00022c     0x2  relais.o [1]
+  .near.bss          zero     0x00022e     0x2  relais.o [1]
+  .near.bss          zero     0x000230     0x2  relais.o [1]
+  .near.bss          zero     0x000232     0x2  relais.o [1]
+  .near.bss          zero     0x000234     0x2  rf-protocol.o [1]
+  .near.bss          zero     0x000236     0x2  rf-protocol.o [1]
+  .near.bss          zero     0x000238     0x2  steuerung.o [1]
+  .near.bss          zero     0x00023a     0x2  steuerung.o [1]
+  .near.bss          zero     0x00023c     0x2  steuerung.o [1]
+  .near.bss          zero     0x00023e     0x2  rand.o [4]
+  .near.bss          zero     0x000240     0x2  rand.o [4]
+  .near.bss          zero     0x000242     0x2  rand.o [4]
+  .near.bss          zero     0x000244     0x2  rand.o [4]
+  .near.bss          zero     0x000246     0x1  analog.o [1]
+  .near.bss          zero     0x000247     0x1  main.o [1]
+  .near.bss          zero     0x000248     0x1  main.o [1]
+  .near.bss          zero     0x000249     0x1  nrf24l01.o [1]
+  .near.bss          zero     0x00024a     0x1  nrf24l01.o [1]
+  .near.bss          zero     0x00024b     0x1  nrf24l01.o [1]
+  .near.bss          zero     0x00024c     0x1  nrf24l01_port.o [1]
+  .near.bss          zero     0x00024d     0x1  position.o [1]
+  .near.bss          zero     0x00024e     0x1  position.o [1]
+  .near.bss          zero     0x00024f     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000250     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000251     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000252     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000253     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000254     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000255     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000256     0x1  rf-protocol.o [1]
+  .near.bss          zero     0x000257     0x1  steuerung.o [1]
+  .near.bss          zero     0x000258     0x1  steuerung.o [1]
+  .near.bss          zero     0x000259     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025a     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025b     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025c     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025d     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025e     0x1  steuerung.o [1]
+  .near.bss          zero     0x00025f     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000260     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000261     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000262     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000263     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000264     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000265     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000266     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000267     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000268     0x1  sync_communication.o [1]
+  .near.bss          zero     0x000269     0x1  rand.o [4]
+                            - 0x00026a   0x22c
+
+"A2":                                    0x100
+  CSTACK                      0x000300   0x100  <Block>
+    CSTACK           uninit   0x000300   0x100  <Block tail>
+                            - 0x000400   0x100
+
+"P7":                                     0x23
+  .eeprom.data       const    0x004000    0x10  steuerung.o [1]
+  .eeprom.data       const    0x004010     0x9  nrf24l01.o [1]
+  .eeprom.data       const    0x004019     0x4  position.o [1]
+  .eeprom.data       const    0x00401d     0x4  position.o [1]
+  .eeprom.data       const    0x004021     0x1  nrf24l01.o [1]
+  .eeprom.data       const    0x004022     0x1  position.o [1]
+                            - 0x004023    0x23
+
+"A3":                                     0x80
+  INTVEC                      0x008000    0x80  <Block>
+    .intvec          const    0x008000    0x80  interrupt.o [4]
+                            - 0x008080    0x80
+
+"P3":                                   0x1f62
+  .near_func.text    ro code  0x008080   0x3ec  nrf24l01.o [1]
+  .near_func.text    ro code  0x00846c   0x3c7  steuerung.o [1]
+  .near_func.text    ro code  0x008833   0x281  rf-protocol.o [1]
+  .near_func.text    ro code  0x008ab4   0x1aa  long.o [4]
+  .near_func.text    ro code  0x008c5e   0x173  sync_communication.o [1]
+  .near_func.text    ro code  0x008dd1   0x14d  relais.o [1]
+  .near_func.text    ro code  0x008f1e   0x14a  sync_communication.o [1]
+  .near_func.text    ro code  0x009068   0x13b  position.o [1]
+  .near_func.text    ro code  0x0091a3    0xf1  vreg_util.o [4]
+  .near_func.text    ro code  0x009294    0xe1  analog.o [1]
+  .near_func.text    ro code  0x009375    0xdf  position.o [1]
+  .near_func.text    ro code  0x009454    0xa4  main.o [1]
+  .near_func.text    ro code  0x0094f8    0x9f  rand.o [4]
+  .near_func.text    ro code  0x009597    0x89  long_util.o [4]
+  .near_func.text    ro code  0x009620    0x86  steuerung.o [1]
+  .near_func.text    ro code  0x0096a6    0x6c  sync_communication.o [1]
+  .near_func.text    ro code  0x009712    0x6b  main.o [1]
+  .near_func.text    ro code  0x00977d    0x61  nrf24l01_port.o [1]
+  .near_func.text    ro code  0x0097de    0x5c  rf-protocol.o [1]
+  .near_func.text    ro code  0x00983a    0x53  nrf24l01.o [1]
+  .near_func.text    ro code  0x00988d    0x50  short.o [4]
+  .near_func.text    ro code  0x0098dd    0x45  sync_communication.o [1]
+  .near_func.text    ro code  0x009922    0x41  rf-protocol.o [1]
+  .near_func.text    ro code  0x009963    0x36  memcmp.o [4]
+  .near_func.text    ro code  0x009999    0x33  relais.o [1]
+  .near_func.text    ro code  0x0099cc    0x2d  steuerung.o [1]
+  .near_func.text    ro code  0x0099f9    0x2a  rf-protocol.o [1]
+  .near_func.text    ro code  0x009a23    0x29  nrf24l01.o [1]
+  .near_func.text    ro code  0x009a4c    0x29  steuerung.o [1]
+  .near_func.text    ro code  0x009a75    0x28  init_small.o [4]
+  .near_func.text    ro code  0x009a9d    0x27  srand.o [4]
+  .near_func.text    ro code  0x009ac4    0x25  stm8s_it.o [1]
+  .near_func.text    ro code  0x009ae9    0x25  memcpy.o [4]
+  .near_func.text    ro code  0x009b0e    0x24  eeprom.o [1]
+  .near_func.text    ro code  0x009b32    0x23  main.o [1]
+  .near_func.text    ro code  0x009b55    0x23  position.o [1]
+  .near_func.text    ro code  0x009b78    0x23  relais.o [1]
+  .near_func.text    ro code  0x009b9b    0x23  stm8s_it.o [1]
+  .near_func.text    ro code  0x009bbe    0x22  steuerung.o [1]
+  .iar.init_table    const    0x009be0    0x12  - Linker created -
+  .near_func.text    ro code  0x009bf2    0x20  nrf24l01.o [1]
+  .near_func.text    ro code  0x009c12    0x1f  position.o [1]
+  .near_func.text    ro code  0x009c31    0x1f  position.o [1]
+  .near_func.text    ro code  0x009c50    0x1f  sync_communication.o [1]
+  .near_func.text    ro code  0x009c6f    0x1e  init_small.o [4]
+  .near_func.text    ro code  0x009c8d    0x1d  rand.o [4]
+  .near_func.text    ro code  0x009caa    0x1c  stm8s_it.o [1]
+  .near_func.text    ro code  0x009cc6    0x1b  sync_communication.o [1]
+  .near_func.text    ro code  0x009ce1    0x19  sync_communication.o [1]
+  .near_func.text    ro code  0x009cfa    0x17  stm8s_it.o [1]
+  .near_func.text    ro code  0x009d11    0x17  init.o [4]
+  .near_func.text    ro code  0x009d28    0x15  hal_delay.o [1]
+  .near_func.text    ro code  0x009d3d    0x15  memset.o [4]
+  .near.rodata       const    0x009d52    0x14  nrf24l01.o [1]
+  .near_func.text    ro code  0x009d66    0x14  steuerung.o [1]
+  .near_func.text    ro code  0x009d7a    0x14  __dbg_xxexit.o [3]
+  .near_func.text    ro code  0x009d8e    0x13  rf-protocol.o [1]
+  .near_func.text    ro code  0x009da1    0x13  cstartup.o [4]
+  .near_func.text    ro code  0x009db4    0x12  eeprom.o [1]
+  .near_func.text    ro code  0x009dc6    0x12  eeprom.o [1]
+  .near_func.text    ro code  0x009dd8    0x12  rf-protocol.o [1]
+  .near_func.text    ro code  0x009dea    0x12  dc_util.o [4]
+  .near_func.text    ro code  0x009dfc    0x11  main.o [1]
+  .near.rodata       const    0x009e0d    0x10  steuerung.o [1]
+  .near_func.text    ro code  0x009e1d     0xf  hal_delay.o [1]
+  .near_func.text    ro code  0x009e2c     0xf  nrf24l01.o [1]
+  .near_func.text    ro code  0x009e3b     0xe  position.o [1]
+  .near_func.text    ro code  0x009e49     0xe  position.o [1]
+  .near_func.text    ro code  0x009e57     0xe  position.o [1]
+  .near_func.text    ro code  0x009e65     0xd  sync_communication.o [1]
+  .near_func.text    ro code  0x009e72     0xc  nrf24l01_port.o [1]
+  .near_func.text    ro code  0x009e7e     0xc  position.o [1]
+  .near_func.text    ro code  0x009e8a     0xc  steuerung.o [1]
+  .near_func.text    ro code  0x009e96     0xc  steuerung.o [1]
+  .near_func.text    ro code  0x009ea2     0xc  steuerung.o [1]
+  .near_func.text    ro code  0x009eae     0xc  sync_communication.o [1]
+  .near_func.text    ro code  0x009eba     0xc  sync_communication.o [1]
+  .near_func.text    ro code  0x009ec6     0xb  analog.o [1]
+  .near_func.text    ro code  0x009ed1     0xb  position.o [1]
+  .near_func.text    ro code  0x009edc     0xb  rf-protocol.o [1]
+  .near_func.text    ro code  0x009ee7     0xb  steuerung.o [1]
+  .near_func.text    ro code  0x009ef2     0xb  steuerung.o [1]
+  .near_func.text    ro code  0x009efd     0xa  position.o [1]
+  .near_func.text    ro code  0x009f07     0xa  steuerung.o [1]
+  .near_func.text    ro code  0x009f11     0xa  steuerung.o [1]
+  .near_func.text    ro code  0x009f1b     0x9  rf-protocol.o [1]
+  .near_func.text    ro code  0x009f24     0x9  steuerung.o [1]
+  .near_func.text    ro code  0x009f2d     0x9  steuerung.o [1]
+  .near_func.text    ro code  0x009f36     0x9  sync_communication.o [1]
+  .near_func.text    ro code  0x009f3f     0x9  rand.o [4]
+  .near_func.text    ro code  0x009f48     0x8  rf-protocol.o [1]
+  .near_func.text    ro code  0x009f50     0x8  rf-protocol.o [1]
+  .near_func.text    ro code  0x009f58     0x7  nrf24l01.o [1]
+  .near_func.text    ro code  0x009f5f     0x7  position.o [1]
+  .near_func.text    ro code  0x009f66     0x7  rf-protocol.o [1]
+  .near_func.text    ro code  0x009f6d     0x7  stm8s_it.o [1]
+  .near_func.text    ro code  0x009f74     0x6  rf-protocol.o [1]
+  .near.rodata       const    0x009f7a     0x5  nrf24l01.o [1]
+  .near_func.text    ro code  0x009f7f     0x5  steuerung.o [1]
+  .near_func.text    ro code  0x009f84     0x5  cexit.o [4]
+  .near_func.text    ro code  0x009f89     0x4  nrf24l01.o [1]
+  .near_func.text    ro code  0x009f8d     0x4  steuerung.o [1]
+  .near.rodata       const    0x009f91     0x3  analog.o [1]
+  .near_func.text    ro code  0x009f94     0x3  interrupt.o [4]
+  .near_func.text    ro code  0x009f97     0x3  low_level_init.o [4]
+  .near_func.text    ro code  0x009f9a     0x3  exit.o [4]
+  .near_func.text    ro code  0x009f9d     0x3  unhandled_exception.o [4]
+  .near.rodata       const    0x009fa0     0x1  main.o [1]
+  .near.rodata       const    0x009fa1     0x1  main.o [1]
+  .near.rodata       const    0x009fa2     0x1  main.o [1]
+  .near_func.text    ro code  0x009fa3     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa4     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa5     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa6     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa7     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa8     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fa9     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009faa     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fab     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fac     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fad     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fae     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009faf     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fb0     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fb1     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fb2     0x1  stm8s_it.o [1]
+  .near_func.text    ro code  0x009fb3     0x1  __dbg_break.o [3]
+  Initializer bytes  ro data  0x009fb4    0x2e  <for P2 s0>
+                            - 0x009fe2  0x1f62
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address   Size
+          -------   ----
+Zero (__iar_zero_init2)
+    1 destination range, total size 0x22c:
+          0x00003e  0x22c
+
+Copy (__iar_copy_init2)
+    1 source range, total size 0x2e:
+          0x009fb4   0x2e
+    1 destination range, total size 0x2e:
+          0x000010   0x2e
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ctrlbox\Debug\Obj: [1]
+    analog.o                   236        3       67
+    eeprom.o                    72                 2
+    hal_delay.o                 36
+    main.o                     323        3        4
+    nrf24l01.o               1 186       35       65
+    nrf24l01_port.o            109                 1
+    position.o                 717        9       20
+    relais.o                   419       35       43
+    rf-protocol.o              926        1      106
+    steuerung.o              1 346       36       26
+    stm8s_it.o                 146
+    sync_communication.o     1 007        2      123
+    ------------------------------------------------
+    Total:                   6 523      124      457
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dbgstm8smd.a: [3]
+    __dbg_break.o                1
+    __dbg_xxexit.o              20
+    ------------------------------------------------
+    Total:                      21
+
+dlstm8smn.a: [4]
+    cexit.o                      5
+    cstartup.o                  19
+    dc_util.o                   18
+    exit.o                       3
+    init.o                      23
+    init_small.o                70
+    interrupt.o                  3      128
+    long.o                     426
+    long_util.o                137
+    low_level_init.o             3
+    memcmp.o                    54
+    memcpy.o                    37
+    memset.o                    21
+    rand.o                     197        4      145
+    short.o                     80
+    srand.o                     39
+    unhandled_exception.o        3
+    vreg_util.o                241
+    vregs.o                                       16
+    ------------------------------------------------
+    Total:                   1 379      132      161
+
+    Linker created                       18      256
+----------------------------------------------------
+    Grand Total:             7 923      274      874
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+?add32_l0_l0_0x         0x008abc         Code  Gb  long.o [4]
+?add32_l0_l0_dl         0x008ab4         Code  Gb  long.o [4]
+?add32_l0_l0_l1         0x008ab9         Code  Gb  long.o [4]
+?and32_l0_l0_0x         0x008bf9         Code  Gb  long.o [4]
+?and32_l0_l0_l1         0x008bf6         Code  Gb  long.o [4]
+?b0                     0x000000         Data  Gb  vregs.o [4]
+?b1                     0x000001         Data  Gb  vregs.o [4]
+?b10                    0x00000a         Data  Gb  vregs.o [4]
+?b11                    0x00000b         Data  Gb  vregs.o [4]
+?b12                    0x00000c         Data  Gb  vregs.o [4]
+?b13                    0x00000d         Data  Gb  vregs.o [4]
+?b14                    0x00000e         Data  Gb  vregs.o [4]
+?b15                    0x00000f         Data  Gb  vregs.o [4]
+?b2                     0x000002         Data  Gb  vregs.o [4]
+?b3                     0x000003         Data  Gb  vregs.o [4]
+?b4                     0x000004         Data  Gb  vregs.o [4]
+?b5                     0x000005         Data  Gb  vregs.o [4]
+?b6                     0x000006         Data  Gb  vregs.o [4]
+?b7                     0x000007         Data  Gb  vregs.o [4]
+?b8                     0x000008         Data  Gb  vregs.o [4]
+?b9                     0x000009         Data  Gb  vregs.o [4]
+?dc32_px                0x009df1         Code  Gb  dc_util.o [4]
+?dc8_px                 0x009dea         Code  Gb  dc_util.o [4]
+?e0                     0x000001         Data  Gb  vregs.o [4]
+?e1                     0x000005         Data  Gb  vregs.o [4]
+?e2                     0x000009         Data  Gb  vregs.o [4]
+?e3                     0x00000d         Data  Gb  vregs.o [4]
+?epilogue_l2            0x00924a         Code  Gb  vreg_util.o [4]
+?epilogue_l2_l3         0x009247         Code  Gb  vreg_util.o [4]
+?epilogue_l2_w6         0x00924e         Code  Gb  vreg_util.o [4]
+?epilogue_w4            0x009255         Code  Gb  vreg_util.o [4]
+?l0                     0x000000         Data  Gb  vregs.o [4]
+?l1                     0x000004         Data  Gb  vregs.o [4]
+?l2                     0x000008         Data  Gb  vregs.o [4]
+?l3                     0x00000c         Data  Gb  vregs.o [4]
+?load32_0x_l0           0x0095e8         Code  Gb  long_util.o [4]
+?load32_0x_l1           0x0095f6         Code  Gb  long_util.o [4]
+?load32_0x_l2           0x009604         Code  Gb  long_util.o [4]
+?load32_0x_l3           0x009612         Code  Gb  long_util.o [4]
+?load32_asp_l0          0x0095dc         Code  Gb  long_util.o [4]
+?load32_dbsp_l0         0x0095d7         Code  Gb  long_util.o [4]
+?load32_l0_0x           0x0095a7         Code  Gb  long_util.o [4]
+?load32_l0_asp          0x00959c         Code  Gb  long_util.o [4]
+?load32_l0_dbsp         0x009597         Code  Gb  long_util.o [4]
+?load32_l0_xsp          0x00959e         Code  Gb  long_util.o [4]
+?load32_l1_0x           0x0095b3         Code  Gb  long_util.o [4]
+?load32_l2_0x           0x0095bf         Code  Gb  long_util.o [4]
+?load32_l3_0x           0x0095cb         Code  Gb  long_util.o [4]
+?load32_xsp_l0          0x0095de         Code  Gb  long_util.o [4]
+?mov_e0_e1              0x009263         Code  Gb  vreg_util.o [4]
+?mov_e0_e3              0x009270         Code  Gb  vreg_util.o [4]
+?mov_e1_e2              0x00927d         Code  Gb  vreg_util.o [4]
+?mov_e2_e0              0x00928a         Code  Gb  vreg_util.o [4]
+?mov_l0_l1              0x009260         Code  Gb  vreg_util.o [4]
+?mov_l0_l3              0x00926d         Code  Gb  vreg_util.o [4]
+?mov_l1_l2              0x00927a         Code  Gb  vreg_util.o [4]
+?mov_l2_l0              0x009287         Code  Gb  vreg_util.o [4]
+?mov_w1_w3              0x009266         Code  Gb  vreg_util.o [4]
+?mov_w1_w7              0x009273         Code  Gb  vreg_util.o [4]
+?mov_w2_w1              0x009259         Code  Gb  vreg_util.o [4]
+?mov_w3_w5              0x009280         Code  Gb  vreg_util.o [4]
+?mov_w5_w1              0x00928d         Code  Gb  vreg_util.o [4]
+?mul16_x_x_w0           0x00988d         Code  Gb  short.o [4]
+?mul32_l0_l0_0x         0x008af2         Code  Gb  long.o [4]
+?mul32_l0_l0_dl         0x008aef         Code  Gb  long.o [4]
+?mul32_l0_l0_l1         0x008afb         Code  Gb  long.o [4]
+?or32_l0_l0_0x          0x008c11         Code  Gb  long.o [4]
+?pop_l0                 0x009213         Code  Gb  vreg_util.o [4]
+?pop_l1                 0x00921e         Code  Gb  vreg_util.o [4]
+?pop_l2                 0x009229         Code  Gb  vreg_util.o [4]
+?pop_l3                 0x009234         Code  Gb  vreg_util.o [4]
+?pop_w4                 0x0091c5         Code  Gb  vreg_util.o [4]
+?pop_w5                 0x0091cc         Code  Gb  vreg_util.o [4]
+?pop_w6                 0x0091d3         Code  Gb  vreg_util.o [4]
+?push_l0                0x0091e2         Code  Gb  vreg_util.o [4]
+?push_l1                0x0091e7         Code  Gb  vreg_util.o [4]
+?push_l2                0x0091ec         Code  Gb  vreg_util.o [4]
+?push_l3                0x0091f1         Code  Gb  vreg_util.o [4]
+?push_w4                0x0091a3         Code  Gb  vreg_util.o [4]
+?push_w5                0x0091a8         Code  Gb  vreg_util.o [4]
+?push_w6                0x0091ad         Code  Gb  vreg_util.o [4]
+?sdiv16_x_x_y           0x0098ab         Code  Gb  short.o [4]
+?sext32_l0_x            0x008c53         Code  Gb  long.o [4]
+?sll16_x_x_10           0x0098cd         Code  Gb  short.o [4]
+?sll16_x_x_11           0x0098cc         Code  Gb  short.o [4]
+?sll16_x_x_4            0x0098d3         Code  Gb  short.o [4]
+?sll16_x_x_5            0x0098d2         Code  Gb  short.o [4]
+?sll16_x_x_6            0x0098d1         Code  Gb  short.o [4]
+?sll16_x_x_7            0x0098d0         Code  Gb  short.o [4]
+?sll16_x_x_8            0x0098cf         Code  Gb  short.o [4]
+?sll16_x_x_9            0x0098ce         Code  Gb  short.o [4]
+?sll16_x_x_a            0x0098c4         Code  Gb  short.o [4]
+?sra32_0x_0x_a          0x008c45         Code  Gb  long.o [4]
+?sra32_l0_l0_a          0x008c42         Code  Gb  long.o [4]
+?sra32_l0_l0_db         0x008c3e         Code  Gb  long.o [4]
+?srl16_x_x_4            0x0098d8         Code  Gb  short.o [4]
+?srl32_0x_0x_a          0x008c30         Code  Gb  long.o [4]
+?srl32_l0_l0_a          0x008c2d         Code  Gb  long.o [4]
+?srl32_l0_l0_db         0x008c29         Code  Gb  long.o [4]
+?sub32_l0_l0_0x         0x008ad7         Code  Gb  long.o [4]
+?sub32_l0_l0_l1         0x008ad4         Code  Gb  long.o [4]
+?ucmp32_c_l0_0x         0x008be6         Code  Gb  long.o [4]
+?udiv32_l0_l0_l1        0x008b79         Code  Gb  long.o [4]
+?umod32_l1_l0_l1        0x008b79         Code  Gb  long.o [4]
+?w0                     0x000000         Data  Gb  vregs.o [4]
+?w1                     0x000002         Data  Gb  vregs.o [4]
+?w2                     0x000004         Data  Gb  vregs.o [4]
+?w3                     0x000006         Data  Gb  vregs.o [4]
+?w4                     0x000008         Data  Gb  vregs.o [4]
+?w5                     0x00000a         Data  Gb  vregs.o [4]
+?w6                     0x00000c         Data  Gb  vregs.o [4]
+?w7                     0x00000e         Data  Gb  vregs.o [4]
+ADC1_IRQHandler         0x009ac4   0x25  Code  Gb  stm8s_it.o [1]
+ADC_Data_Callback       0x009310   0x65  Code  Gb  analog.o [1]
+ADC_SetCurrent          0x0092c1   0x4f  Code  Gb  analog.o [1]
+ADC_Start               0x009294   0x2d  Code  Gb  analog.o [1]
+AWU_IRQHandler          0x009fa5    0x1  Code  Gb  stm8s_it.o [1]
+CLK_IRQHandler          0x009fa6    0x1  Code  Gb  stm8s_it.o [1]
+CSTACK$$Base            0x000300          --   Gb  - Linker created -
+CSTACK$$Limit           0x000400          --   Gb  - Linker created -
+Change_Addr             0x00808d   0x48  Code  Gb  nrf24l01.o [1]
+Change_RF_Channel       0x00814b    0xa  Code  Gb  nrf24l01.o [1]
+EEPROM_EEC_IRQHandler   0x009fb2    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTA_IRQHandler   0x009fa7    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTB_IRQHandler   0x009fa8    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTC_IRQHandler   0x009fa9    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTD_IRQHandler   0x009faa    0x1  Code  Gb  stm8s_it.o [1]
+EXTI_PORTE_IRQHandler   0x009fab    0x1  Code  Gb  stm8s_it.o [1]
+Ext_IRQ_Service         0x008155   0x2d  Code  Gb  nrf24l01.o [1]
+Flush24L01RegTimer      0x000251    0x1  Data  Gb  rf-protocol.o [1]
+FlushRfModule           0x009dd8   0x12  Code  Gb  rf-protocol.o [1]
+FunkAppl                0x008833  0x281  Code  Gb  rf-protocol.o [1]
+Get_Data                0x009bf2   0x20  Code  Gb  nrf24l01.o [1]
+I2C_IRQHandler          0x009fb1    0x1  Code  Gb  stm8s_it.o [1]
+INTVEC$$Base            0x008000          --   Gb  - Linker created -
+INTVEC$$Limit           0x008080          --   Gb  - Linker created -
+Init_Funk               0x009d8e   0x13  Code  Gb  rf-protocol.o [1]
+Init_RF_Settings        0x008182   0x9e  Code  Gb  nrf24l01.o [1]
+MODUL_ID                0x009fa0    0x1  Data  Gb  main.o [1]
+MasterTimeOut           0x000252    0x1  Data  Gb  rf-protocol.o [1]
+REVISION_ID             0x009fa2    0x1  Data  Gb  main.o [1]
+RF_Timer_10ms           0x0097de   0x5c  Code  Gb  rf-protocol.o [1]
+Region$$Table$$Base     0x009be0          --   Gb  - Linker created -
+Region$$Table$$Limit    0x009bf2          --   Gb  - Linker created -
+Relais_Position_Timer_1ms
+                        0x009375   0xdf  Code  Gb  position.o [1]
+RfButtonResult          0x0001f6    0x4  Data  Gb  rf-protocol.o [1]
+RfTimer                 0x000250    0x1  Data  Gb  rf-protocol.o [1]
+Rf_mode                 0x000253    0x1  Data  Gb  rf-protocol.o [1]
+RxIndex                 0x000268    0x1  Data  Gb  sync_communication.o [1]
+Rx_Frame                0x0001a2   0x20  Data  Gb  rf-protocol.o [1]
+Rx_mode                 0x000254    0x1  Data  Gb  rf-protocol.o [1]
+SPI_IRQHandler          0x009fac    0x1  Code  Gb  stm8s_it.o [1]
+SPI_RF_Init             0x00826b   0x82  Code  Gb  nrf24l01.o [1]
+SPI_Read_Buf            0x0083b9   0x3c  Code  Gb  nrf24l01.o [1]
+SPI_Read_Reg            0x008443    0xe  Code  Gb  nrf24l01.o [1]
+SPI_Transmit            0x009e72    0xc  Code  Gb  nrf24l01_port.o [1]
+SPI_Write_Buf           0x0083f5   0x48  Code  Gb  nrf24l01.o [1]
+SPI_Write_Reg           0x008451   0x1b  Code  Gb  nrf24l01.o [1]
+Set_Current_Addr        0x0080ea    0xc  Code  Gb  nrf24l01.o [1]
+Set_Teach_Addr          0x008105   0x46  Code  Gb  nrf24l01.o [1]
+SteuerungFunkInit       0x009a4c   0x29  Code  Gb  steuerung.o [1]
+Switch_Rf_mode          0x009a23   0x29  Code  Gb  nrf24l01.o [1]
+TIM1_CAP_COM_IRQHandler
+                        0x009fae    0x1  Code  Gb  stm8s_it.o [1]
+TIM1_UPD_OVF_TRG_BRK_IRQHandler
+                        0x009fad    0x1  Code  Gb  stm8s_it.o [1]
+TIM2_CAP_COM_IRQHandler
+                        0x009fb0    0x1  Code  Gb  stm8s_it.o [1]
+TIM2_UPD_OVF_BRK_IRQHandler
+                        0x009faf    0x1  Code  Gb  stm8s_it.o [1]
+TIM4_UPD_OVF_IRQHandler
+                        0x009cfa   0x17  Code  Gb  stm8s_it.o [1]
+TLI_IRQHandler          0x009fa4    0x1  Code  Gb  stm8s_it.o [1]
+TRAP_IRQHandler         0x009fa3    0x1  Code  Gb  stm8s_it.o [1]
+TeachTimer              0x000234    0x2  Data  Gb  rf-protocol.o [1]
+Transmit_ID_Data        0x009922   0x41  Code  Gb  rf-protocol.o [1]
+TxFrame                 0x00015a   0x28  Data  Gb  sync_communication.o [1]
+TxIndex                 0x000267    0x1  Data  Gb  sync_communication.o [1]
+Tx_Frame                0x000182   0x20  Data  Gb  rf-protocol.o [1]
+UART1_RX_IRQHandler     0x009b9b   0x23  Code  Gb  stm8s_it.o [1]
+UART1_TX_IRQHandler     0x009caa   0x1c  Code  Gb  stm8s_it.o [1]
+UART_SendChar           0x0096fc    0x9  Code  Gb  sync_communication.o [1]
+UART_SendString         0x0096d9   0x23  Code  Gb  sync_communication.o [1]
+VERSION_ID              0x009fa1    0x1  Data  Gb  main.o [1]
+Wait_Tx                 0x0099f9   0x2a  Code  Gb  rf-protocol.o [1]
+_Rand_idx               0x00021e    0x4  Data  Lc  rand.o [4]
+_Rand_rv                0x00003e   0x80  Data  Lc  rand.o [4]
+_Randinit               0x000269    0x1  Data  Gb  rand.o [4]
+_Randseed               0x000037    0x4  Data  Gb  rand.o [4]
+__DebugBreak            0x009fb3    0x1  Code  Gb  __dbg_break.o [3]
+__exit                  0x009d7a   0x14  Code  Gb  __dbg_xxexit.o [3]
+__iar_Tls_setup__Rand_idx
+                        0x000242    0x2  Data  Lc  rand.o [4]
+__iar_Tls_setup__Rand_rv
+                        0x000244    0x2  Data  Lc  rand.o [4]
+__iar_Tls_setup__Randinit
+                        0x00023e    0x2  Data  Gb  rand.o [4]
+__iar_Tls_setup__Randseed
+                        0x000240    0x2  Data  Gb  rand.o [4]
+__iar_copy_init2        0x009a75         Code  Gb  init_small.o [4]
+__iar_data_init2        0x009d11   0x17  Code  Gb  init.o [4]
+__iar_program_start     0x009da1         Code  Gb  cstartup.o [4]
+__iar_unhandled_exception
+                        0x009f9d         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2        0x009c6f         Code  Gb  init_small.o [4]
+__intvec                0x008000         Data  Gb  interrupt.o [4]
+__low_level_init        0x009f97    0x3  Code  Gb  low_level_init.o [4]
+_exit                   0x009f84         Code  Gb  cexit.o [4]
+_interrupt_1            0x009fa3         Code  Gb  stm8s_it.o [1]
+_interrupt_12           0x009fac         Code  Gb  stm8s_it.o [1]
+_interrupt_13           0x009fad         Code  Gb  stm8s_it.o [1]
+_interrupt_14           0x009fae         Code  Gb  stm8s_it.o [1]
+_interrupt_15           0x009faf         Code  Gb  stm8s_it.o [1]
+_interrupt_16           0x009fb0         Code  Gb  stm8s_it.o [1]
+_interrupt_19           0x009caa         Code  Gb  stm8s_it.o [1]
+_interrupt_2            0x009fa4         Code  Gb  stm8s_it.o [1]
+_interrupt_20           0x009b9b         Code  Gb  stm8s_it.o [1]
+_interrupt_21           0x009fb1         Code  Gb  stm8s_it.o [1]
+_interrupt_24           0x009ac4         Code  Gb  stm8s_it.o [1]
+_interrupt_25           0x009cfa         Code  Gb  stm8s_it.o [1]
+_interrupt_26           0x009fb2         Code  Gb  stm8s_it.o [1]
+_interrupt_3            0x009fa5         Code  Gb  stm8s_it.o [1]
+_interrupt_4            0x009fa6         Code  Gb  stm8s_it.o [1]
+_interrupt_5            0x009fa7         Code  Gb  stm8s_it.o [1]
+_interrupt_6            0x009fa8         Code  Gb  stm8s_it.o [1]
+_interrupt_7            0x009fa9         Code  Gb  stm8s_it.o [1]
+_interrupt_8            0x009faa         Code  Gb  stm8s_it.o [1]
+_interrupt_9            0x009fab         Code  Gb  stm8s_it.o [1]
+allFlatTimeoutTimer     0x000238    0x2  Data  Gb  steuerung.o [1]
+allFlatTimer            0x000257    0x1  Data  Gb  steuerung.o [1]
+automaticMovementIsActive
+                        0x00025b    0x1  Data  Gb  steuerung.o [1]
+btActive                0x000262    0x1  Data  Gb  sync_communication.o [1]
+channelAD               0x009f91    0x3  Data  Gb  analog.o [1]
+checkPulseReset         0x009068  0x13b  Code  Gb  position.o [1]
+copyPulseCounterToEE    0x009c31   0x1f  Code  Gb  position.o [1]
+current                 0x0001ec    0x6  Data  Gb  analog.o [1]
+currentTemp             0x0000be   0x3c  Data  Lc  analog.o [1]
+dataReceivedTimer       0x000249    0x1  Data  Gb  nrf24l01.o [1]
+delay_ms                0x009d28   0x15  Code  Gb  hal_delay.o [1]
+delay_us                0x009e1d    0xf  Code  Gb  hal_delay.o [1]
+doSteuerung             0x00846c  0x3c7  Code  Gb  steuerung.o [1]
+driveDirection          0x00022e    0x2  Data  Gb  relais.o [1]
+driveState              0x00022c    0x2  Data  Gb  relais.o [1]
+driveStateTimer         0x000230    0x2  Data  Gb  relais.o [1]
+eeReadTempBuffer        0x000222    0x2  Data  Gb  eeprom.o [1]
+ee_Member_Tab           0x004010    0x9  Data  Gb  nrf24l01.o [1]
+ee_RF_CURRENT_ADDR      0x004021    0x1  Data  Gb  nrf24l01.o [1]
+ee_memoryPosition       0x004000   0x10  Data  Gb  steuerung.o [1]
+ee_originalPosition     0x009e0d   0x10  Data  Gb  steuerung.o [1]
+ee_pulseCounter         0x004019    0x4  Data  Gb  position.o [1]
+ee_pulseTopValue        0x00401d    0x4  Data  Gb  position.o [1]
+ee_read_bytes           0x009db4   0x12  Code  Gb  eeprom.o [1]
+ee_smartSyncState       0x004022    0x1  Data  Gb  position.o [1]
+ee_write_bytes          0x009b0e   0x24  Code  Gb  eeprom.o [1]
+exit                    0x009f9a    0x3  Code  Gb  exit.o [4]
+feedbackTimer           0x000259    0x1  Data  Gb  steuerung.o [1]
+flag_10ms               0x000247    0x1  Data  Gb  main.o [1]
+getMemoryActive         0x009bbe   0x22  Code  Gb  steuerung.o [1]
+getPulseCounter         0x009f5f    0x7  Code  Gb  position.o [1]
+getRFbuttons            0x009f74    0x6  Code  Gb  rf-protocol.o [1]
+gpio_init               0x009712   0x6b  Code  Gb  main.o [1]
+inRushTimer             0x000232    0x2  Data  Gb  relais.o [1]
+ledCode                 0x000216    0x4  Data  Gb  sync_communication.o [1]
+ledDispTimeout          0x00003b    0x1  Data  Gb  rf-protocol.o [1]
+loadMemory              0x009e8a    0xc  Code  Gb  steuerung.o [1]
+loadPulses              0x009e57    0xe  Code  Gb  position.o [1]
+main                    0x009454   0xa4  Code  Gb  main.o [1]
+main_count              0x000236    0x2  Data  Gb  rf-protocol.o [1]
+memPos                  0x000033    0x4  Data  Gb  steuerung.o [1]
+memTimer                0x000258    0x1  Data  Gb  steuerung.o [1]
+member                  0x0001db    0x9  Data  Gb  rf-protocol.o [1]
+memcmp                  0x009963   0x36  Code  Gb  memcmp.o [4]
+memcpy                  0x009ae9   0x25  Code  Gb  memcpy.o [4]
+memset                  0x009d3d   0x15  Code  Gb  memset.o [4]
+moveToTimer             0x0001fa    0x4  Data  Gb  steuerung.o [1]
+myAddr                  0x000264    0x1  Data  Gb  sync_communication.o [1]
+myControlUnitIndex      0x00003c    0x1  Data  Gb  sync_communication.o [1]
+nrf24l01_port_init      0x00977d   0x61  Code  Gb  nrf24l01_port.o [1]
+nrfTimerFlag10ms        0x00024f    0x1  Data  Gb  rf-protocol.o [1]
+pulseCounter            0x0001f2    0x4  Data  Gb  position.o [1]
+pulseCounterSync        0x000202    0x4  Data  Gb  sync_communication.o [1]
+pulseStartTime          0x000228    0x2  Data  Gb  position.o [1]
+pulseTime               0x000226    0x2  Data  Gb  position.o [1]
+rand                    0x0094f8   0x9f  Code  Gb  rand.o [4]
+readPulseCounterFromEE  0x009b55   0x23  Code  Gb  position.o [1]
+readRxPayload           0x00983a   0x53  Code  Gb  nrf24l01.o [1]
+relaisTimer_10ms        0x008e5a   0x63  Code  Gb  relais.o [1]
+resetPulseCounter       0x009ed1    0xb  Code  Gb  position.o [1]
+restoreMemory           0x0099cc   0x2d  Code  Gb  steuerung.o [1]
+rstFlag                 0x00022a    0x2  Data  Gb  position.o [1]
+seed                    0x000224    0x2  Data  Gb  main.o [1]
+serviceActive           0x000263    0x1  Data  Gb  sync_communication.o [1]
+setDirTable             0x00002c    0x7  Data  Gb  relais.o [1]
+setDownTable            0x00001e    0x7  Data  Gb  relais.o [1]
+setPWMdown              0x008dd1   0x3b  Code  Gb  relais.o [1]
+setPWMup                0x008e0c   0x3b  Code  Gb  relais.o [1]
+setRelais               0x008ebd   0x61  Code  Gb  relais.o [1]
+setRelaisDown           0x0099a9   0x23  Code  Gb  relais.o [1]
+setRelaisUp             0x009b78   0x23  Code  Gb  relais.o [1]
+setStopTable            0x000017    0x7  Data  Gb  relais.o [1]
+setTimeoutTable         0x000025    0x7  Data  Gb  relais.o [1]
+setUpTable              0x000010    0x7  Data  Gb  relais.o [1]
+shadow_ee_Member_Tab    0x0001d2    0x9  Data  Gb  nrf24l01.o [1]
+shadow_ee_RF_CURRENT_ADDR
+                        0x00024a    0x1  Data  Gb  nrf24l01.o [1]
+smartSyncState          0x00024d    0x1  Data  Gb  position.o [1]
+spiTransceiver          0x0000fa   0x35  Data  Gb  nrf24l01.o [1]
+srand                   0x009a9d   0x27  Code  Gb  srand.o [4]
+stopAll                 0x00025a    0x1  Data  Gb  steuerung.o [1]
+stopMemory              0x009f8d    0x4  Code  Gb  steuerung.o [1]
+storePulses             0x009e3b    0xe  Code  Gb  position.o [1]
+strgKeyTimer            0x00024c    0x1  Data  Gb  nrf24l01_port.o [1]
+strgTimer_10ms          0x009620   0x86  Code  Gb  steuerung.o [1]
+switchCmd               0x0001c2   0x10  Data  Gb  rf-protocol.o [1]
+symcBtKeysReceivedIndex
+                        0x000266    0x1  Data  Gb  sync_communication.o [1]
+syncActive              0x000261    0x1  Data  Gb  sync_communication.o [1]
+syncBtKeysReceived      0x00020a    0x4  Data  Gb  sync_communication.o [1]
+syncBtpulseCounter      0x00020e    0x4  Data  Gb  sync_communication.o [1]
+syncCalcCheckSum        0x0096b7   0x22  Code  Gb  sync_communication.o [1]
+syncCom10msTimer        0x009ce1   0x19  Code  Gb  sync_communication.o [1]
+syncComDo               0x008c5e  0x173  Code  Gb  sync_communication.o [1]
+syncComTimeoutTimer     0x000260    0x1  Data  Gb  sync_communication.o [1]
+syncComWaitTimer        0x00025f    0x1  Data  Gb  sync_communication.o [1]
+syncFrame               0x00012f   0x2b  Data  Gb  sync_communication.o [1]
+syncInit                0x0096a6    0x6  Code  Gb  sync_communication.o [1]
+syncKeysReceived        0x000206    0x4  Data  Gb  sync_communication.o [1]
+syncKeysTransmitted     0x000212    0x4  Data  Gb  sync_communication.o [1]
+syncNewFrame            0x00003d    0x1  Data  Gb  sync_communication.o [1]
+syncSendData            0x008f1e  0x14a  Code  Gb  sync_communication.o [1]
+syncStatus              0x000265    0x1  Data  Gb  sync_communication.o [1]
+syncTimeout             0x00023a    0x2  Data  Gb  steuerung.o [1]
+sync_htons              0x009eae    0xc  Code  Gb  sync_communication.o [1]
+sys_1ms_timeout         0x009b32   0x23  Code  Gb  main.o [1]
+timer4_freetime_config  0x009dfc   0x11  Code  Gb  main.o [1]
+trans_base_addr         0x009d52   0x14  Data  Gb  nrf24l01.o [1]
+trans_pipe0_addr        0x009f7a    0x5  Data  Gb  nrf24l01.o [1]
+uart1InitRx             0x009705    0xd  Code  Gb  sync_communication.o [1]
+uart1InitTx             0x009e65    0xd  Code  Gb  sync_communication.o [1]
+uart1ReceiveCallback    0x009c50   0x1f  Code  Gb  sync_communication.o [1]
+uart1TrvCompleteCallBack
+                        0x009cc6   0x1b  Code  Gb  sync_communication.o [1]
+
+
+[1] = E:\Workspace\SoftwareBackup\nrf24l01-for-stm8s\stm8s003_ctrlbox\Debug\Obj
+[2] = command line
+[3] = dbgstm8smd.a
+[4] = dlstm8smn.a
+
+  7 923 bytes of readonly  code memory
+    274 bytes of readonly  data memory
+    874 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,27 @@
+
+	NRF24L01-LIB history
+
+todo:
+
+done:
+
+	-	Initialisierung in nrf_genRandomAddress() korrigiert
+
+V2.00
+
+	-	angepasst für STM32F030K6T6
+
+V1.12
+
+	-	ATmega324p hizugefügt
+
+V1.11
+
+	-	Bugfix: readRxPayload() angepasst: Die Paket-Größe wird nun abgefragt um Übertragungsfehler zu erkennen und zu behandeln.
+	
+V1.10
+
+V1.5
+	Pipe wird beim initialisieren oder löschen des Kanals auf 0 gesetzt.
+
+
