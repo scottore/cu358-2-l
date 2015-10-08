@@ -1,3 +1,4 @@
+/*This is the main file*/
 #include "stm8s_conf.h"
 #include "hal_delay.h"
 #include "misc.h"
